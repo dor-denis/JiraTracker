@@ -28,7 +28,13 @@ projects:
 ```
 * *hours* setting is overall amount of working hours in your company
 * each *projects* array entry is a project you need to keep track of
-3. (optional) Add this script to your Cron so it will run every work day:
+3. To track your branches for today, call `python JiraTracker/JiraTracker.py settings.yml`
+4. (optional) Add this script to your Cron so it will run every work day at 17:30, so you won't need to run it manually:
 ```cron
-0 0 * * 1-5 /bin/python {path_to_JiraTracker}/JiraTracker/JiraTracker.py {path_to_settings.yml}
+30 17 * * 1-5 /bin/python {path_to_JiraTracker}/JiraTracker/JiraTracker.py {path_to_settings.yml}
 ```
+
+------
+If you want to track your time for some day in the past, supply this date as a second agrgument to JiraTracker.py, for example:
+```bash
+python JiraTracker.py ../settings.yml 2018-02-17
