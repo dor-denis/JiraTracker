@@ -16,8 +16,9 @@ class Settings(object):
             raise Exceptions.SettingsException('Please specify "projects" in config file')
 
         projects = []
+        overall_hours = self.settings['hours']
+        hours = overall_hours / len(self.settings['projects'])
         for project in self.settings['projects']:
-            hours = 6
             if 'jira_name' not in project:
                 raise Exceptions.SettingsException('Please specify "jira_name" in project configuration')
             if 'path' not in project:
@@ -28,8 +29,6 @@ class Settings(object):
                 raise Exceptions.SettingsException('Please specify "username" in project configuration')
             if 'password' not in project:
                 raise Exceptions.SettingsException('Please specify "password" in project configuration')
-            if 'hours' not in project:
-                hours = 6
 
             projects.append(Project.Project(
                 project['jira_name'],

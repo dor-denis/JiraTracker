@@ -1,7 +1,7 @@
+hours: 6
 projects:
   - jira_name: YOUR_PROJECT_JIRA_CODE
     path: ABSOLUTE_PATH_TO_YOUR_REPO
     jira_url: https://domain.jira.com
     username: YOUR_JIRA_USERNAME
     password: YOUR_JIRA_PASSWORD
-    hours: 6
