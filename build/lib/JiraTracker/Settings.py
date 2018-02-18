@@ -1,8 +1,6 @@
 import yaml
 import os
-import Exceptions
-import Project
-
+from . import Project
 
 class Settings(object):
     def __init__(self, settings_path):
@@ -30,7 +28,7 @@ class Settings(object):
             if 'password' not in project:
                 raise Exceptions.SettingsException('Please specify "password" in project configuration')
 
-            projects.append(Project.Project(
+            projects.append(Project(
                 project['jira_name'],
                 project['path'],
                 project['jira_url'],

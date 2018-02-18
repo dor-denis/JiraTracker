@@ -1,14 +1,14 @@
-import Project
 import datetime
-import GitHistoryParser
 import os
-import JiraApi
+from . import Project
+from . import GitHistoryParser
+from . import JiraApi
 
 
 class SimpleTracker(object):
     def __init__(self, project):
-        assert (isinstance(project, Project.Project))
-        self.parser = GitHistoryParser.GitHistoryParser(project)
+        assert (isinstance(project, Project))
+        self.parser = GitHistoryParser(project)
         self.project = project
         self.events = []
 
@@ -23,7 +23,7 @@ class SimpleTracker(object):
     def track(self, date):
         events = self.get_to_track(date)
         to_track = datetime.timedelta(hours=self.project.get_hours_per_day()) / len(events)
-        api = JiraApi.JiraApi()
+        api = JiraApi()
 
         success = []
         for event in events:
@@ -31,7 +31,6 @@ class SimpleTracker(object):
                 success.append(event)
 
         return success
-
 
     def get_to_track(self, date):
         assert (isinstance(date, datetime.date))

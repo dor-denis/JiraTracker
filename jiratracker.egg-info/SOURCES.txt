@@ -5,7 +5,6 @@ JiraTracker/GitHistoryParser.py
 JiraTracker/HistoryEvent.py
 JiraTracker/HistoryLine.py
 JiraTracker/JiraApi.py
-JiraTracker/JiraTracker.py
 JiraTracker/Project.py
 JiraTracker/Settings.py
 JiraTracker/Tracker.py
