@@ -41,4 +41,5 @@ projects:
 ------
 If you want to track your time for some day in the past, supply this date as a second agrgument to JiraTracker.py, for example:
 ```bash
-python JiraTracker.py ../settings.yml 2018-02-17
+cd {JiraTracker folder}
+python track.py settings.yml 2018-02-17
