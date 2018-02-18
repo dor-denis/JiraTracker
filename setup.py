@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
+from setuptools import setup
 
 setup(name='jiratracker',
       version='1.0',
@@ -12,5 +12,6 @@ setup(name='jiratracker',
       install_requires=[
           'requests',
           'pyyaml'
-      ]
+      ],
+      keywords="jira log track"
       )

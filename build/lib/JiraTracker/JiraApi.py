@@ -1,7 +1,7 @@
 import requests
+import Project
+import HistoryEvent
 import datetime
-from . import Project
-from . import HistoryEvent
 
 
 class JiraApi(object):

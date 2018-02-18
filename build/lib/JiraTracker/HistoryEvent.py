@@ -1,12 +1,13 @@
-from . import HistoryLine
-from . import Project
+from HistoryLine import HistoryTicketLine
+from HistoryLine import HistoryLine
+from Project import Project
 
 
 class HistoryEvent(object):
     def __init__(self, history_line1, history_line2, project):
-        assert (isinstance(history_line1, HistoryLine.HistoryLine))
-        assert (isinstance(history_line2, HistoryLine.HistoryLine))
-        assert (isinstance(project, Project.Project))
+        assert (isinstance(history_line1, HistoryLine))
+        assert (isinstance(history_line2, HistoryLine))
+        assert (isinstance(project, Project))
         self.history_line1 = history_line1
         self.history_line2 = history_line2
         self.project = project
@@ -15,7 +16,7 @@ class HistoryEvent(object):
         return self.history_line2.get_time() - self.history_line1.get_time()
 
     def get_ticket(self):
-        if isinstance(self.history_line1, HistoryLine.HistoryTicketLine):
+        if isinstance(self.history_line1, HistoryTicketLine):
             return self.history_line1.get_ticket()
         return None
 
@@ -23,7 +24,7 @@ class HistoryEvent(object):
         return self.history_line2.get_time().date()
 
     def is_ticket_target(self):
-        return isinstance(self.history_line2, HistoryLine.HistoryTicketLine)
+        return isinstance(self.history_line2, HistoryTicketLine)
 
     def __eq__(self, other):
         assert (isinstance(other, HistoryEvent))
