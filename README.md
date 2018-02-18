@@ -9,14 +9,18 @@ It does not spy on you, it just counts how many branches you've checked out toda
 and tracks them by evenly dividing the amount of branches you was working on.
 
 ## Usage
-1. Install git checkout hook which will store your checkout log to .git/logs/checkout_history
+1. 
+```bash
+git clone https://github.com/dor-denis/JiraTracker
+```
+2. Install git checkout hook which will store your checkout log to .git/logs/checkout_history
 ```bash
 cd JiraTracker
 pip install -r requirements.txt
 python install.py PATH_TO_YOUR_REPOSITORY
 cp settings.example.yml settings.yml
 ```
-2. Set up your Jira connection (`settings.yml` file)
+3. Set up your Jira connection (`settings.yml` file)
 ```YAML
 hours: 6
 projects:
@@ -28,10 +32,11 @@ projects:
 ```
 * *hours* setting is overall amount of working hours in your company
 * each *projects* array entry is a project you need to keep track of
-3. To track your branches for today, call `python JiraTracker/JiraTracker.py settings.yml`
-4. (optional) Add this script to your Cron so it will run every work day at 17:30, so you won't need to run it manually:
+4. To track your branches for today, call `python JiraTracker/JiraTracker.py settings.yml`
+5. (optional) Add this script to your Cron so it will run every work day at 17:30, so you won't need to run it manually:
 ```cron
 30 17 * * 1-5 /bin/python {path_to_JiraTracker}/JiraTracker/JiraTracker.py {path_to_settings.yml}
+/bin/python {path_to_repo}/tracker.py {path_to_settings.yml}
 ```
 
 ------
