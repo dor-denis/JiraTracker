@@ -9,7 +9,7 @@ It does not spy on you, it just counts how many branches you've checked out toda
 and tracks them by evenly dividing the amount of branches you was working on.
 
 ## Usage
-1. 
+1. Clone the distribution
 ```bash
 git clone https://github.com/dor-denis/JiraTracker
 ```
@@ -35,8 +35,7 @@ projects:
 4. To track your branches for today, call `python JiraTracker/JiraTracker.py settings.yml`
 5. (optional) Add this script to your Cron so it will run every work day at 17:30, so you won't need to run it manually:
 ```cron
-30 17 * * 1-5 /bin/python {path_to_JiraTracker}/JiraTracker/JiraTracker.py {path_to_settings.yml}
-/bin/python {path_to_repo}/tracker.py {path_to_settings.yml}
+30 17 * * 1-5 /bin/python {path_to_repo}/tracker.py {path_to_settings.yml}
 ```
 
 ------
