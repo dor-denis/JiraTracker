@@ -8,7 +8,7 @@ from . import JiraApi
 class SimpleTracker(object):
     def __init__(self, project):
         assert (isinstance(project, Project))
-        self.parser = GitHistoryParser(project)
+        self.parser = GitHistoryParser.GitHistoryParser(project)
         self.project = project
         self.events = []
 
