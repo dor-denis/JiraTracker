@@ -2,3 +2,4 @@ venv
 .idea
 settings.yml
 __pycache__
+dist
